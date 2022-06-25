@@ -1,0 +1,9 @@
+1. Permissions need to be set up on the auth0 dashboard
+2. Create 1 SQL table file that matches the front end claim form
+3. .env file needs the correct ISSUER_BASE_URL and AUDIENCE from auth0
+4. authMiddleware needs to checked to confirm checkJwt is correct
+5. In the server.js file, checkJwt needs to be added to protect routes - app.use("/api/claims", checkJwt, claimsRouter); //jwtCheck needs to go here,
+6. In server\data-access\claimsRepository.js match the newClaimQuery SQL query to the claim form - variable names and values should be correct and the same as the form data
+7. Check that createNewClaimSQL function has the correct variables in server\data-access\claimsRepository.js
+8. In server\data-access\claimControllers.js add the Recaptcha code
+9. Check permissions in server\controllers\claimsControllers.js for each function. Make sure the names match up to the permissions on the Auth0 dashboard.
